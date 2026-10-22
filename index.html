@@ -173,7 +173,7 @@
       margin-top: 15px;
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -241,6 +241,21 @@
     .slide-counter {
       color: #64748b;
       font-weight: 600;
+    }
+
+    #questionSelect {
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      font-weight: 600;
+      background-color: #ffffff;
+      color: #1e293b;
+      cursor: pointer;
+      outline: none;
+    }
+
+    #questionSelect:focus {
+      border-color: #0284c7;
     }
   </style>
 </head>
@@ -1312,6 +1327,12 @@
   <div id="controls">
     <button class="ctrl-btn" onclick="prevSlide()">&larr; Previous</button>
     <button class="jump-btn" onclick="goToSlide(0)">2009 QP</button>
+    
+    <!-- Question Selection Dropdown -->
+    <select id="questionSelect" onchange="goToSlide(parseInt(this.value))">
+      <option value="" disabled selected>Jump to Question...</option>
+    </select>
+
     <button class="jump-btn" onclick="goToSlide(48)">2010 QP</button>
     <span class="slide-counter" id="counter">1 / 98</span>
     <button class="ctrl-btn" onclick="nextSlide()">Next &rarr;</button>
@@ -1321,12 +1342,27 @@
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
     const counter = document.getElementById('counter');
+    const selectBox = document.getElementById('questionSelect');
+
+    // Dynamically build the question dropdown options
+    function populateQuestionMenu() {
+      slides.forEach((slide, index) => {
+        const badge = slide.querySelector('.q-badge');
+        if (badge) {
+          const option = document.createElement('option');
+          option.value = index;
+          option.textContent = badge.textContent.trim();
+          selectBox.appendChild(option);
+        }
+      });
+    }
 
     function updateDeck() {
       slides.forEach((slide, index) => {
         slide.classList.toggle('active', index === currentSlide);
       });
       counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+      if (selectBox) selectBox.value = "";
     }
 
     function nextSlide() {
@@ -1358,6 +1394,7 @@
       }
     });
 
+    populateQuestionMenu();
     updateDeck();
   </script>
 </body>
