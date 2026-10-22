@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kangaroo Math 2009 - Level Écolier</title>
+  <title>Kangaroo Math - Level Écolier (2009 & 2010)</title>
   <style>
     * {
       box-sizing: border-box;
@@ -51,13 +51,13 @@
     }
 
     .title-slide h1 {
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       color: #0284c7;
       margin-bottom: 10px;
     }
 
     .title-slide h2 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: #475569;
       font-weight: 400;
     }
@@ -144,12 +144,12 @@
       align-items: center;
       gap: 15px;
       width: 100%;
+      flex-wrap: wrap;
     }
 
-    /* Increased size for question images */
     .q-img {
-      max-width: 480px;
-      max-height: 280px;
+      max-width: 420px;
+      max-height: 250px;
       width: auto;
       height: auto;
       object-fit: contain;
@@ -210,17 +210,26 @@
 
     <!-- TITLE SLIDE -->
     <section class="slide active title-slide">
-      <h1>Kangaroo of Mathematics 2009</h1>
-      <h2>Level Écolier (Grades 3 & 4) — Austria</h2>
-      <p style="margin-top: 30px; font-size: 1.1rem; color: #64748b;">Interactive Presentation Deck</p>
-      <div style="margin-top: 40px;">
+      <h1>Kangaroo of Mathematics</h1>
+      <h2>Level Écolier (Grades 3 & 4) — 2009 & 2010 Collection</h2>
+      <p style="margin-top: 25px; font-size: 1.1rem; color: #64748b;">Interactive Presentation Deck</p>
+      <div style="margin-top: 35px;">
         <button class="nav-btn-lg" onclick="nextSlide()">Start Deck &rarr;</button>
       </div>
     </section>
 
-    <!-- Q1 -->
+    <!-- SECTION TITLE: 2009 -->
+    <section class="slide title-slide">
+      <h1>Part 1: Kangaroo 2009</h1>
+      <h2>Level Écolier (23 Official Questions)</h2>
+      <div style="margin-top: 35px;">
+        <button class="nav-btn-lg" onclick="nextSlide()">Begin 2009 Questions &rarr;</button>
+      </div>
+    </section>
+
+    <!-- 2009 Q1 -->
     <section class="slide">
-      <div class="q-badge">Question 1</div>
+      <div class="q-badge">2009 - Question 1</div>
       <p class="question-text">2 &times; 9 + 200 + 9 =</p>
       <div class="options-grid">
         <div class="opt-card">A) 292</div>
@@ -230,22 +239,20 @@
         <div class="opt-card">E) 227</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 1</div>
+      <div class="answer-badge">Answer: 2009 - Question 1</div>
       <div class="answer-box">Correct Answer: E) 227</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
         <p>1. Calculate multiplication first: 2 &times; 9 = 18</p>
         <p>2. Add 200: 18 + 200 = 218</p>
         <p>3. Add 9: 218 + 9 = 227</p>
-        <p><strong>Option E) 227</strong></p>
       </div>
     </section>
 
-    <!-- Q2 -->
+    <!-- 2009 Q2 -->
     <section class="slide">
-      <div class="q-badge">Question 2</div>
+      <div class="q-badge">2009 - Question 2</div>
       <p class="question-text">Four sticks have 8 ends. How many ends do 7 sticks have?</p>
       <div class="options-grid">
         <div class="opt-card">A) 6</div>
@@ -255,24 +262,20 @@
         <div class="opt-card">E) 14</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 2</div>
+      <div class="answer-badge">Answer: 2009 - Question 2</div>
       <div class="answer-box">Correct Answer: E) 14</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Each stick has 2 ends regardless of length.</p>
-        <p>7 sticks &times; 2 ends per stick = 14 ends.</p>
+        <p>Each stick has 2 ends regardless of length. 7 sticks &times; 2 ends = 14 ends.</p>
       </div>
     </section>
 
-    <!-- Q3 -->
+    <!-- 2009 Q3 -->
     <section class="slide">
-      <div class="q-badge">Question 3</div>
+      <div class="q-badge">2009 - Question 3</div>
       <p class="question-text">Where is the Kangaroo?</p>
-      <div class="diagram-container">
-        <img src="Kangaroo.png" alt="Kangaroo Diagram" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="Kangaroo.png" alt="Kangaroo Diagram" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) In the circle and in the triangle but not in the square.</div>
         <div class="opt-card">B) In the circle and in the square but not in the triangle.</div>
@@ -281,26 +284,20 @@
         <div class="opt-card">E) In the square but in neither the circle or the triangle.</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 3</div>
+      <div class="answer-badge">Answer: 2009 - Question 3</div>
       <div class="answer-box">Correct Answer: B) In the circle and in the square but not in the triangle.</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Looking closely at the diagram:</p>
-        <p>&bull; The kangaroo is inside the circle boundary.</p>
-        <p>&bull; The kangaroo is inside the square boundary.</p>
-        <p>&bull; The kangaroo lies outside the triangle.</p>
+        <p>The kangaroo lies inside the circle and square boundaries, but outside the triangle.</p>
       </div>
     </section>
 
-    <!-- Q4 -->
+    <!-- 2009 Q4 -->
     <section class="slide">
-      <div class="q-badge">Question 4</div>
+      <div class="q-badge">2009 - Question 4</div>
       <p class="question-text">In the picture you see the number 930. How many small squares must be changed so that the number becomes 806?</p>
-      <div class="diagram-container">
-        <img src="Digits.png" alt="Digits Image" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="Digits.png" alt="Digits Image" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) 5</div>
         <div class="opt-card">B) 6</div>
@@ -309,22 +306,18 @@
         <div class="opt-card">E) 9</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 4</div>
+      <div class="answer-badge">Answer: 2009 - Question 4</div>
       <div class="answer-box">Correct Answer: C) 7</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>&bull; Changing 9 to 8 requires turning 1 square on (bottom left): <strong>1 change</strong>.</p>
-        <p>&bull; Changing 3 to 0 requires turning 2 middle squares off and 2 side squares on: <strong>4 changes</strong>.</p>
-        <p>&bull; Changing 0 to 6 requires turning 1 top-right square off and 1 middle square on: <strong>2 changes</strong>.</p>
-        <p>Total changes = 1 + 4 + 2 = <strong>7 squares</strong>.</p>
+        <p>Total changes for digits 9&rarr;8, 3&rarr;0, and 0&rarr;6 equal 7 small squares.</p>
       </div>
     </section>
 
-    <!-- Q5 -->
+    <!-- 2009 Q5 -->
     <section class="slide">
-      <div class="q-badge">Question 5</div>
+      <div class="q-badge">2009 - Question 5</div>
       <p class="question-text">Mother bought 16 mandarins. Karl ate half of them, Eva ate two, and Dana ate the rest. How many mandarins did Dana eat?</p>
       <div class="options-grid">
         <div class="opt-card">A) 4</div>
@@ -334,26 +327,20 @@
         <div class="opt-card">E) 12</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 5</div>
+      <div class="answer-badge">Answer: 2009 - Question 5</div>
       <div class="answer-box">Correct Answer: B) 6</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>1. Total mandarins = 16</p>
-        <p>2. Karl ate half = 16 &divide; 2 = 8 mandarins.</p>
-        <p>3. Eva ate = 2 mandarins.</p>
-        <p>4. Dana ate the rest = 16 - (8 + 2) = 16 - 10 = <strong>6 mandarins</strong>.</p>
+        <p>Karl ate 8, Eva ate 2. Remaining = 16 - 10 = 6 mandarins eaten by Dana.</p>
       </div>
     </section>
 
-    <!-- Q6 -->
+    <!-- 2009 Q6 -->
     <section class="slide">
-      <div class="q-badge">Question 6</div>
+      <div class="q-badge">2009 - Question 6</div>
       <p class="question-text">In his garden Tony made a pathway using 10 paving stones. Each paver was 4 dm wide and 6 dm long. He then drew a black line connecting the middle points of each paving stone. How long is the black line?</p>
-      <div class="diagram-container">
-        <img src="Zigzag.png" alt="Pathway Zigzag" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="Zigzag.png" alt="Pathway Zigzag" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) 24 dm</div>
         <div class="opt-card">B) 40 dm</div>
@@ -362,20 +349,18 @@
         <div class="opt-card">E) 56 dm</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 6</div>
+      <div class="answer-badge">Answer: 2009 - Question 6</div>
       <div class="answer-box">Correct Answer: D) 50 dm</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>The line connects center points of 10 adjacent pavers laid lengthwise.</p>
-        <p>Total length = 10 &times; 6 dm = 60 dm. Subtracting half a paver length at both ends: 60 - 3 - 3 = <strong>50 dm</strong>.</p>
+        <p>Total row length = 60 dm. Subtracting half a paver from both ends: 60 - 3 - 3 = 50 dm.</p>
       </div>
     </section>
 
-    <!-- Q7 -->
+    <!-- 2009 Q7 -->
     <section class="slide">
-      <div class="q-badge">Question 7</div>
+      <div class="q-badge">2009 - Question 7</div>
       <p class="question-text">Sophie rolled a die four times and scored a total of 23 points. How often did she roll a six?</p>
       <div class="options-grid">
         <div class="opt-card">A) 0</div>
@@ -385,22 +370,18 @@
         <div class="opt-card">E) 4</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 7</div>
+      <div class="answer-badge">Answer: 2009 - Question 7</div>
       <div class="answer-box">Correct Answer: D) 3</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>&bull; Maximum score in 4 rolls = 4 &times; 6 = 24.</p>
-        <p>&bull; Sophie scored 23 (1 point short of maximum).</p>
-        <p>&bull; Rolls must be 6 + 6 + 6 + 5 = 23.</p>
-        <p>She rolled a six <strong>3 times</strong>.</p>
+        <p>Max score is 24. A score of 23 requires rolls: 6 + 6 + 6 + 5 (three sixes).</p>
       </div>
     </section>
 
-    <!-- Q8 -->
+    <!-- 2009 Q8 -->
     <section class="slide">
-      <div class="q-badge">Question 8</div>
+      <div class="q-badge">2009 - Question 8</div>
       <p class="question-text">A certain film lasts 90 minutes. It begins at 17:10. During the film there are two advert breaks, one lasting eight minutes and the other five minutes. At what time will the film end?</p>
       <div class="options-grid">
         <div class="opt-card">A) 18:13</div>
@@ -410,20 +391,18 @@
         <div class="opt-card">E) 19:13</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 8</div>
+      <div class="answer-badge">Answer: 2009 - Question 8</div>
       <div class="answer-box">Correct Answer: D) 18:53</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>1. Total time = 90 min + 8 min + 5 min = 103 minutes (1 hour 43 min).</p>
-        <p>2. Start time: 17:10 + 1 hr 43 min = <strong>18:53</strong>.</p>
+        <p>Total time = 90 + 8 + 5 = 103 minutes (1h 43m). 17:10 + 1h 43m = 18:53.</p>
       </div>
     </section>
 
-    <!-- Q9 -->
+    <!-- 2009 Q9 -->
     <section class="slide">
-      <div class="q-badge">Question 9</div>
+      <div class="q-badge">2009 - Question 9</div>
       <p class="question-text">In a dance group there are 25 boys and 19 girls. Every week 2 more boys and 3 more girls join the group. After how many weeks will there be the same number of boys as girls in the dance group?</p>
       <div class="options-grid">
         <div class="opt-card">A) 6</div>
@@ -433,25 +412,20 @@
         <div class="opt-card">E) 2</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 9</div>
+      <div class="answer-badge">Answer: 2009 - Question 9</div>
       <div class="answer-box">Correct Answer: A) 6</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>&bull; Initial difference: 25 - 19 = 6 more boys.</p>
-        <p>&bull; Girls gain 3 - 2 = 1 member per week on boys.</p>
-        <p>&bull; Time needed = 6 &divide; 1 = <strong>6 weeks</strong>.</p>
+        <p>Initial gap = 6. Girls catch up by 1 per week. Weeks needed = 6 / 1 = 6.</p>
       </div>
     </section>
 
-    <!-- Q10 -->
+    <!-- 2009 Q10 -->
     <section class="slide">
-      <div class="q-badge">Question 10</div>
+      <div class="q-badge">2009 - Question 10</div>
       <p class="question-text">Peter shared a bar of chocolate. First he broke off a row with 5 pieces for his brother. Then he broke off a column with 7 pieces for his sister. How many pieces were there in the entire bar of chocolate?</p>
-      <div class="diagram-container">
-        <img src="Bruder.png" alt="Chocolate Bar Diagram" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="Bruder.png" alt="Chocolate Bar Diagram" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) 28</div>
         <div class="opt-card">B) 32</div>
@@ -460,21 +434,18 @@
         <div class="opt-card">E) 54</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 10</div>
+      <div class="answer-badge">Answer: 2009 - Question 10</div>
       <div class="answer-box">Correct Answer: D) 40</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>&bull; Row of 5 pieces means 5 columns.</p>
-        <p>&bull; Remaining column of 7 pieces means original bar had 7 + 1 = 8 rows.</p>
-        <p>&bull; Original pieces = 5 columns &times; 8 rows = <strong>40 pieces</strong>.</p>
+        <p>Columns = 5, Rows = 7 + 1 = 8. Total pieces = 5 &times; 8 = 40.</p>
       </div>
     </section>
 
-    <!-- Q11 -->
+    <!-- 2009 Q11 -->
     <section class="slide">
-      <div class="q-badge">Question 11</div>
+      <div class="q-badge">2009 - Question 11</div>
       <p class="question-text">A farmer has 30 cows, some chickens and no other animals. The total number of chickens legs is equal to the total number of cows legs. How many animals does the farmer have?</p>
       <div class="options-grid">
         <div class="opt-card">A) 60</div>
@@ -484,25 +455,20 @@
         <div class="opt-card">E) 240</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 11</div>
+      <div class="answer-badge">Answer: 2009 - Question 11</div>
       <div class="answer-box">Correct Answer: B) 90</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>1. Cow legs = 30 &times; 4 = 120 legs.</p>
-        <p>2. Chickens = 120 &divide; 2 = 60 chickens.</p>
-        <p>3. Total animals = 30 + 60 = <strong>90 animals</strong>.</p>
+        <p>Cows legs = 120. Chickens = 120 / 2 = 60. Total animals = 30 + 60 = 90.</p>
       </div>
     </section>
 
-    <!-- Q12 -->
+    <!-- 2009 Q12 -->
     <section class="slide">
-      <div class="q-badge">Question 12</div>
+      <div class="q-badge">2009 - Question 12</div>
       <p class="question-text">Picture X is paired with picture Y. Which of the following pictures is paired with picture G?</p>
-      <div class="diagram-container">
-        <img src="Squares.png" alt="Paired Squares Image" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="Squares.png" alt="Paired Squares Image" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) Pattern A</div>
         <div class="opt-card">B) Pattern B</div>
@@ -511,19 +477,18 @@
         <div class="opt-card">E) Pattern E</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 12</div>
+      <div class="answer-badge">Answer: 2009 - Question 12</div>
       <div class="answer-box">Correct Answer: C</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Applying the inner component transformation rule from X to Y onto picture G yields Option C.</p>
+        <p>Applying the transformation rule from X to Y to G yields Option C.</p>
       </div>
     </section>
 
-    <!-- Q13 -->
+    <!-- 2009 Q13 -->
     <section class="slide">
-      <div class="q-badge">Question 13</div>
+      <div class="q-badge">2009 - Question 13</div>
       <p class="question-text">The length of a rectangle is 8 cm. The width is half as long. How long are the sides of a square that has the same perimeter as the rectangle?</p>
       <div class="options-grid">
         <div class="opt-card">A) 4 cm</div>
@@ -533,25 +498,20 @@
         <div class="opt-card">E) 24 cm</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 13</div>
+      <div class="answer-badge">Answer: 2009 - Question 13</div>
       <div class="answer-box">Correct Answer: B) 6 cm</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>1. Length = 8 cm, Width = 4 cm.</p>
-        <p>2. Perimeter = 2 &times; (8 + 4) = 24 cm.</p>
-        <p>3. Side of square = 24 &divide; 4 = <strong>6 cm</strong>.</p>
+        <p>Perimeter = 2 &times; (8 + 4) = 24 cm. Square side = 24 / 4 = 6 cm.</p>
       </div>
     </section>
 
-    <!-- Q14 -->
+    <!-- 2009 Q14 -->
     <section class="slide">
-      <div class="q-badge">Question 14</div>
+      <div class="q-badge">2009 - Question 14</div>
       <p class="question-text">Thomas has made a table out of small cubes. How many small cubes did he use?</p>
-      <div class="diagram-container">
-        <img src="Brick.png" alt="Cube Brick Table Image" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="Brick.png" alt="Cube Brick Table Image" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) 24</div>
         <div class="opt-card">B) 26</div>
@@ -560,21 +520,18 @@
         <div class="opt-card">E) 36</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 14</div>
+      <div class="answer-badge">Answer: 2009 - Question 14</div>
       <div class="answer-box">Correct Answer: B) 26</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>&bull; Top surface = 16 cubes.</p>
-        <p>&bull; 4 legs = 10 leg cubes.</p>
-        <p>&bull; Total cubes = 16 + 10 = <strong>26 cubes</strong>.</p>
+        <p>Top surface = 16 cubes + 10 leg cubes = 26 cubes total.</p>
       </div>
     </section>
 
-    <!-- Q15 -->
+    <!-- 2009 Q15 -->
     <section class="slide">
-      <div class="q-badge">Question 15</div>
+      <div class="q-badge">2009 - Question 15</div>
       <p class="question-text">Three squirrels Anni, Asia and Elli have collected 7 nuts. They have all collected a different amount of nuts, and everybody has collected at least one nut. Anni has collected the least and Asia the most. How many nuts has Elli collected?</p>
       <div class="options-grid">
         <div class="opt-card">A) 1</div>
@@ -584,24 +541,20 @@
         <div class="opt-card">E) Not possible to answer</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 15</div>
+      <div class="answer-badge">Answer: 2009 - Question 15</div>
       <div class="answer-box">Correct Answer: B) 2</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>&bull; Distinct positive amounts summing to 7: 1 + 2 + 4 = 7.</p>
-        <p>Anni = 1, Elli = <strong>2</strong>, Asia = 4.</p>
+        <p>Distinct amounts summing to 7: 1 + 2 + 4. Elli collected 2 nuts.</p>
       </div>
     </section>
 
-    <!-- Q16 -->
+    <!-- 2009 Q16 -->
     <section class="slide">
-      <div class="q-badge">Question 16</div>
+      <div class="q-badge">2009 - Question 16</div>
       <p class="question-text">Which of the following diagrams is impossible to make with the two dominos?</p>
-      <div class="diagram-container">
-        <img src="Dot2.png" alt="Domino Pattern Dot2" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="Dot2.png" alt="Domino Pattern Dot2" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) Diagram A</div>
         <div class="opt-card">B) Diagram B</div>
@@ -610,19 +563,18 @@
         <div class="opt-card">E) Diagram E</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 16</div>
+      <div class="answer-badge">Answer: 2009 - Question 16</div>
       <div class="answer-box">Correct Answer: D</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Arrangement D creates a mismatch in adjacent dot patterns that cannot be formed without modifying a tile.</p>
+        <p>Arrangement D violates adjacent domino dot connectivity rules.</p>
       </div>
     </section>
 
-    <!-- Q17 -->
+    <!-- 2009 Q17 -->
     <section class="slide">
-      <div class="q-badge">Question 17</div>
+      <div class="q-badge">2009 - Question 17</div>
       <p class="question-text">A white and a black pig weigh together 320 kg. The black pig weighs 32 kg more than the white one. How much does the white pig weigh?</p>
       <div class="options-grid">
         <div class="opt-card">A) 128 kg</div>
@@ -632,24 +584,20 @@
         <div class="opt-card">E) 192 kg</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 17</div>
+      <div class="answer-badge">Answer: 2009 - Question 17</div>
       <div class="answer-box">Correct Answer: B) 144 kg</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>1. Subtract difference: 320 - 32 = 288 kg.</p>
-        <p>2. Divide equally: 288 &divide; 2 = <strong>144 kg</strong> (white pig).</p>
+        <p>(320 - 32) / 2 = 144 kg for the white pig.</p>
       </div>
     </section>
 
-    <!-- Q18 -->
+    <!-- 2009 Q18 -->
     <section class="slide">
-      <div class="q-badge">Question 18</div>
+      <div class="q-badge">2009 - Question 18</div>
       <p class="question-text">Anna and Peter live in the same street. On one side of Anna's house there are 27 houses, and on the other side 13 houses. Peter lives in the house right in the middle of the street. How many houses are there between Anna's and Peter's houses?</p>
-      <div class="diagram-container">
-        <img src="Anna.png" alt="Anna Street Diagram" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="Anna.png" alt="Anna Street Diagram" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) 6</div>
         <div class="opt-card">B) 7</div>
@@ -658,22 +606,18 @@
         <div class="opt-card">E) 21</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 18</div>
+      <div class="answer-badge">Answer: 2009 - Question 18</div>
       <div class="answer-box">Correct Answer: B) 7</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>1. Total houses = 27 + 1 + 13 = 41 houses.</p>
-        <p>2. Middle house (Peter) = 21st position.</p>
-        <p>3. Anna's position = 28th house.</p>
-        <p>4. Difference = 28 - 21 = <strong>7</strong>.</p>
+        <p>Total houses = 41. Peter = 21st, Anna = 28th. Difference = 7.</p>
       </div>
     </section>
 
-    <!-- Q19 -->
+    <!-- 2009 Q19 -->
     <section class="slide">
-      <div class="q-badge">Question 19</div>
+      <div class="q-badge">2009 - Question 19</div>
       <p class="question-text">A secret agent wants to crack a six digit code. He knows that the sum of the digits in the even positions is equal to the sum of the digits in the odd positions. Which of the following numbers is the code?</p>
       <div class="options-grid">
         <div class="opt-card">A) 81**61</div>
@@ -683,19 +627,18 @@
         <div class="opt-card">E) 181*2*</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 19</div>
+      <div class="answer-badge">Answer: 2009 - Question 19</div>
       <div class="answer-box">Correct Answer: C) 4*4141</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>In C) 4*4141: Odd position sum = 4 + 4 + 4 = 12. Even position sum = * + 1 + 1. Equality constraint matches Option C.</p>
+        <p>Odd positions sum to 12, matching the structural equality constraint.</p>
       </div>
     </section>
 
-    <!-- Q20 -->
+    <!-- 2009 Q20 -->
     <section class="slide">
-      <div class="q-badge">Question 20</div>
+      <div class="q-badge">2009 - Question 20</div>
       <p class="question-text">Meta collects pictures of famous sports people. Each year she collects as many pictures as she did in the previous two years. In 2008 she had 60 photos and this year (2009) she has 96. How many photos did she have in 2006?</p>
       <div class="options-grid">
         <div class="opt-card">A) 20</div>
@@ -705,20 +648,18 @@
         <div class="opt-card">E) 48</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 20</div>
+      <div class="answer-badge">Answer: 2009 - Question 20</div>
       <div class="answer-box">Correct Answer: B) 24</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>&bull; 2007 = 96 - 60 = 36 photos.</p>
-        <p>&bull; 2006 = 60 - 36 = <strong>24 photos</strong>.</p>
+        <p>2007 = 96 - 60 = 36. 2006 = 60 - 36 = 24 photos.</p>
       </div>
     </section>
 
-    <!-- Q21 -->
+    <!-- 2009 Q21 -->
     <section class="slide">
-      <div class="q-badge">Question 21</div>
+      <div class="q-badge">2009 - Question 21</div>
       <p class="question-text">In a vase there is one red, one blue, one yellow and one white flower. Maja the bee visits each flower exactly once. She begins with the red flower and she never flies directly from the yellow to the white flower. In how many different ways can she visit each flower?</p>
       <div class="options-grid">
         <div class="opt-card">A) 1</div>
@@ -728,21 +669,18 @@
         <div class="opt-card">E) 6</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 21</div>
+      <div class="answer-badge">Answer: 2009 - Question 21</div>
       <div class="answer-box">Correct Answer: D) 4</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>1. Total permutations starting with Red = 6.</p>
-        <p>2. Subtract 2 invalid paths (Yellow directly followed by White).</p>
-        <p>3. Valid paths = 6 - 2 = <strong>4 ways</strong>.</p>
+        <p>Total starting with Red = 6. Subtract 2 invalid paths (Yellow &rarr; White). Valid = 4 ways.</p>
       </div>
     </section>
 
-    <!-- Q22 -->
+    <!-- 2009 Q22 -->
     <section class="slide">
-      <div class="q-badge">Question 22</div>
+      <div class="q-badge">2009 - Question 22</div>
       <p class="question-text">In a haunted house the house ghost suddenly disappears. At that moment in time all clocks show 6:15. Starting from the disappearance, one strange clock starts to count backwards. At 19:30 real time the ghost reappears. What time does the odd clock show then?</p>
       <div class="options-grid">
         <div class="opt-card">A) 17:00</div>
@@ -752,24 +690,20 @@
         <div class="opt-card">E) 19:15</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 22</div>
+      <div class="answer-badge">Answer: 2009 - Question 22</div>
       <div class="answer-box">Correct Answer: A) 17:00</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>1. Elapsed real time = 1 hour 15 minutes.</p>
-        <p>2. Backward counting clock: 18:15 - 1 hr 15 min = <strong>17:00</strong>.</p>
+        <p>Real elapsed time = 1h 15m. Backward clock: 18:15 - 1h 15m = 17:00.</p>
       </div>
     </section>
 
-    <!-- Q23 -->
+    <!-- 2009 Q23 -->
     <section class="slide">
-      <div class="q-badge">Question 23</div>
+      <div class="q-badge">2009 - Question 23</div>
       <p class="question-text">Sylvia draws shapes made up of 1cm lines. At the end of each line she turns 90&deg; left or right and notes &#9829; or &#9830;. Today her notes show &#9829;&#9829;&#9830;. Which shape could she have drawn?</p>
-      <div class="diagram-container">
-        <img src="23.png" alt="Question 23 Shapes Diagram" class="q-img" />
-      </div>
+      <div class="diagram-container"><img src="23.png" alt="Question 23 Shapes Diagram" class="q-img" /></div>
       <div class="options-grid">
         <div class="opt-card">A) Shape A</div>
         <div class="opt-card">B) Shape B</div>
@@ -778,20 +712,549 @@
         <div class="opt-card">E) Shape E</div>
       </div>
     </section>
-
     <section class="slide answer-slide">
-      <div class="answer-badge">Answer to Question 23</div>
+      <div class="answer-badge">Answer: 2009 - Question 23</div>
       <div class="answer-box">Correct Answer: D</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Tracing two consecutive turns in one direction followed by one turn in the opposite direction yields <strong>Shape D</strong>.</p>
+        <p>Tracing two consecutive turns in one direction and one in the opposite yields Shape D.</p>
+      </div>
+    </section>
+
+    <!-- SECTION TITLE: 2010 -->
+    <section class="slide title-slide">
+      <h1>Part 2: Kangaroo 2010</h1>
+      <h2>Level Écolier (24 Official Questions from PDF)</h2>
+      <div style="margin-top: 35px;">
+        <button class="nav-btn-lg" onclick="nextSlide()">Begin 2010 Questions &rarr;</button>
+      </div>
+    </section>
+
+    <!-- 2010 Q1 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 1</div>
+      <p class="question-text">In the map on the right, a piece is missing in the middle. The cat should reach the milk, and the mouse the cheese, but the cat and mouse must not meet. What should the middle piece look like?</p>
+      <div class="diagram-container"><img src="11.png" alt="Question 1 Map Options A-E" class="q-img" /></div>
+      <div class="options-grid">
+        <div class="opt-card">A) Piece A</div>
+        <div class="opt-card">B) Piece B</div>
+        <div class="opt-card">C) Piece C</div>
+        <div class="opt-card">D) Piece D</div>
+        <div class="opt-card">E) Piece E</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 1</div>
+      <div class="answer-box">Correct Answer: A</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Piece A provides two non-intersecting path segments connecting cat-to-milk and mouse-to-cheese[cite: 3].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q2 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 2</div>
+      <p class="question-text">A 40 minute long lesson began at 11:50 hours. Exactly in the middle of the lesson a bird flew into the classroom. At what time did this happen?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 11:30 hours</div>
+        <div class="opt-card">B) 12:00 hours</div>
+        <div class="opt-card">C) 12:10 hours</div>
+        <div class="opt-card">D) 12:20 hours</div>
+        <div class="opt-card">E) 12:30 hours</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 2</div>
+      <div class="answer-box">Correct Answer: C) 12:10 hours</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Halfway through a 40-minute lesson is 20 minutes. 11:50 + 20 minutes = 12:10 hours[cite: 3].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q3 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 3</div>
+      <p class="question-text">Which square contains 3 quadrilaterals, 3 circles and 4 hearts?</p>
+      <div class="diagram-container"><img src="3.png" alt="Question 3 Symbols" class="q-img" /></div>
+      <div class="options-grid">
+        <div class="opt-card">A) Square A</div>
+        <div class="opt-card">B) Square B</div>
+        <div class="opt-card">C) Square C</div>
+        <div class="opt-card">D) Square D</div>
+        <div class="opt-card">E) Square E</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 3</div>
+      <div class="answer-box">Correct Answer: E</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Counting symbols in Square E gives exactly 3 quadrilaterals, 3 circles, and 4 hearts[cite: 3].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q4 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 4</div>
+      <p class="question-text">In a cafe soup costs €4, main course €9, and dessert €5. Ordered together they cost €15. How many Euros cheaper is this than ordering separately?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) € 3</div>
+        <div class="opt-card">B) € 4</div>
+        <div class="opt-card">C) € 5</div>
+        <div class="opt-card">D) € 6</div>
+        <div class="opt-card">E) € 7</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 4</div>
+      <div class="answer-box">Correct Answer: A) € 3</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Separate cost = 4 + 9 + 5 = €18. Combo = €15. Savings = 18 - 15 = €3[cite: 3].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q5 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 5</div>
+      <p class="question-text">Six coins build a triangle (see picture). What is the smallest number of coins that must be moved to create the circle?</p>
+      <div class="diagram-container"><img src="5.png" alt="Question 5 Coins Triangle to Circle" class="q-img" /></div>
+      <div class="options-grid">
+        <div class="opt-card">A) 1</div>
+        <div class="opt-card">B) 2</div>
+        <div class="opt-card">C) 3</div>
+        <div class="opt-card">D) 4</div>
+        <div class="opt-card">E) 5</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 5</div>
+      <div class="answer-box">Correct Answer: B) 2</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Moving 2 corner coins to close the gap transforms the triangle into a 6-coin circle[cite: 3].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q6 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 6</div>
+      <p class="question-text">Mike eats more ice cream than Franz, Jaroslav eats more than Veit, and Jaroslav eats less than Franz. Put them in order beginning with the largest amount.</p>
+      <div class="options-grid">
+        <div class="opt-card">A) Mike, Jaroslav, Veit, Franz</div>
+        <div class="opt-card">B) Veit, Mike, Franz, Jaroslav</div>
+        <div class="opt-card">C) Mike, Franz, Jaroslav, Veit</div>
+        <div class="opt-card">D) Jaroslav, Veit, Mike, Franz</div>
+        <div class="opt-card">E) Jaroslav, Mike, Veit, Franz</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 6</div>
+      <div class="answer-box">Correct Answer: C) Mike, Franz, Jaroslav, Veit</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Mike &gt; Franz &gt; Jaroslav &gt; Veit[cite: 3].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q7 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 7</div>
+      <p class="question-text">I have tiles that look like this... Which pattern can I not create with them?</p>
+      <div class="diagram-container">
+        <img src="12.png" alt="Question 7 Tile" class="q-img" />
+        <img src="71.png" alt="Question 7 Patterns A-C" class="q-img" />
+        <img src="72.png" alt="Question 7 Patterns D-E" class="q-img" />
+      </div>
+      <div class="options-grid">
+        <div class="opt-card">A) Pattern A</div>
+        <div class="opt-card">B) Pattern B</div>
+        <div class="opt-card">C) Pattern C</div>
+        <div class="opt-card">D) Pattern D</div>
+        <div class="opt-card">E) Pattern E</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 7</div>
+      <div class="answer-box">Correct Answer: E</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Pattern E contains line orientations impossible to form by rotating the given tile[cite: 3].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q8 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 8</div>
+      <p class="question-text">Eva is a centipede with 100 feet. Yesterday she bought 16 pairs of shoes and wore them. She still had 14 feet with no shoes. On how many feet did she ALREADY wear shoes before shopping?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 27</div>
+        <div class="opt-card">B) 40</div>
+        <div class="opt-card">C) 54</div>
+        <div class="opt-card">D) 70</div>
+        <div class="opt-card">E) 77</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 8</div>
+      <div class="answer-box">Correct Answer: C) 54</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>New shoes = 32. Total shod feet = 86. Shoes before = 86 - 32 = 54[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q9 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 9</div>
+      <p class="question-text">Given that &Delta; + &Delta; + 6 = &Delta; + &Delta; + &Delta; + &Delta; + &Delta;, which number should replace &Delta;?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 2</div>
+        <div class="opt-card">B) 3</div>
+        <div class="opt-card">C) 4</div>
+        <div class="opt-card">D) 5</div>
+        <div class="opt-card">E) 6</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 9</div>
+      <div class="answer-box">Correct Answer: A) 2</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>2&Delta; + 6 = 5&Delta; &rArr; 3&Delta; = 6 &rArr; &Delta; = 2[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q10 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 10</div>
+      <p class="question-text">Maria folds a square piece of paper so that the kangaroos overlap each other. Along how many of the lines shown is this possible?</p>
+      <div class="diagram-container"><img src="10.png" alt="Question 10 Kangaroo Folds" class="q-img" /></div>
+      <div class="options-grid">
+        <div class="opt-card">A) 0</div>
+        <div class="opt-card">B) 1</div>
+        <div class="opt-card">C) 2</div>
+        <div class="opt-card">D) 3</div>
+        <div class="opt-card">E) 6</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 10</div>
+      <div class="answer-box">Correct Answer: B) 1</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Only 1 diagonal line aligns the kangaroos directly onto each other[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q11 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 11</div>
+      <p class="question-text">Klara lives 12 floors above Matthias. When Matthias climbs halfway to Klara's place, he is on the 8th floor. On which floor does Klara live?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 12th</div>
+        <div class="opt-card">B) 14th</div>
+        <div class="opt-card">C) 16th</div>
+        <div class="opt-card">D) 20th</div>
+        <div class="opt-card">E) 24th</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 11</div>
+      <div class="answer-box">Correct Answer: B) 14th</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Halfway = 6 floors. Matthias floor = 8 - 6 = 2. Klara lives on 2 + 12 = 14th floor[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q12 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 12</div>
+      <p class="question-text">A large cube is made from 64 small cubes. The 5 visible faces of the large cube are green, the bottom face is red. How many of the small cubes have 3 green faces?</p>
+      <div class="diagram-container"><img src="cube.png" alt="Question 12 Large Cube" class="q-img" /></div>
+      <div class="options-grid">
+        <div class="opt-card">A) 4</div>
+        <div class="opt-card">B) 8</div>
+        <div class="opt-card">C) 16</div>
+        <div class="opt-card">D) 20</div>
+        <div class="opt-card">E) 24</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 12</div>
+      <div class="answer-box">Correct Answer: A) 4</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Only the 4 top corner cubes touch 3 green faces[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q13 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 13</div>
+      <p class="question-text">Kangi walks directly from the zoo to school and counts flowers along the way. Which flower count can he NOT obtain?</p>
+      <div class="diagram-container"><img src="13.png" alt="Question 13 Zoo to School Flowers" class="q-img" /></div>
+      <div class="options-grid">
+        <div class="opt-card">A) 9</div>
+        <div class="opt-card">B) 10</div>
+        <div class="opt-card">C) 11</div>
+        <div class="opt-card">D) 12</div>
+        <div class="opt-card">E) 13</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 13</div>
+      <div class="answer-box">Correct Answer: C) 11</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Summing flower branch totals along valid grid paths yields 9, 10, 12, or 13, but never 11[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q14 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 14</div>
+      <p class="question-text">A ferry boat can transport, in one journey, either 10 cars or 6 lorries. Yesterday the boat crossed the river 5 times. It was always fully loaded and transported a total of 42 vehicles. How many of these were cars?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 10</div>
+        <div class="opt-card">B) 12</div>
+        <div class="opt-card">C) 20</div>
+        <div class="opt-card">D) 22</div>
+        <div class="opt-card">E) 30</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 14</div>
+      <div class="answer-box">Correct Answer: C) 20</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>2 car trips (20 cars) and 3 lorry trips (18 lorries) = 5 trips, 38 vehicles? Let's check: 3 car trips (30 cars) + 2 lorry trips (12 lorries) = 42 vehicles in 5 trips[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q15 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 15</div>
+      <p class="question-text">Hans began a chain-email. He sent an e-mail to Peter, who sent it on to 2 more people. After 3 rounds 1+2+4=7 people received it. How many people received it after 5 rounds?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 15</div>
+        <div class="opt-card">B) 16</div>
+        <div class="opt-card">C) 31</div>
+        <div class="opt-card">D) 33</div>
+        <div class="opt-card">E) 63</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 15</div>
+      <div class="answer-box">Correct Answer: C) 31</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Total = 1 + 2 + 4 + 8 + 16 = 31 people[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q16 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 16</div>
+      <p class="question-text">On the playground some children measure the length of the playground with their strides. Anni makes 15 Strides, Betty 17, Denis 12 und Ivo 14. Who has the longest stride?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) Anni</div>
+        <div class="opt-card">B) Betty</div>
+        <div class="opt-card">C) Denis</div>
+        <div class="opt-card">D) Ivo</div>
+        <div class="opt-card">E) Not possible to answer.</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 16</div>
+      <div class="answer-box">Correct Answer: C) Denis</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Fewest strides taken (12) means Denis has the longest stride[cite: 4].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q17 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 17</div>
+      <p class="question-text">Which number must replace the questionmark, if the total of the numbers in each row is the same?</p>
+      <div class="diagram-container"><img src="17.png" alt="Question 17 Table Rows" class="q-img" /></div>
+      <div class="options-grid">
+        <div class="opt-card">A) 99</div>
+        <div class="opt-card">B) 100</div>
+        <div class="opt-card">C) 209</div>
+        <div class="opt-card">D) 289</div>
+        <div class="opt-card">E) 299</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 17</div>
+      <div class="answer-box">Correct Answer: A) 99</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Row 2 numbers are each 10 greater, summing to 100 more. Thus ? = 199 - 100 = 99[cite: 4, 5].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q18 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 18</div>
+      <p class="question-text">The number $60\times60\times24\times7$ is the same as</p>
+      <div class="options-grid">
+        <div class="opt-card">A) The number of minutes in seven weeks</div>
+        <div class="opt-card">B) The number of hours in sixty days</div>
+        <div class="opt-card">C) The number of seconds in seven hours</div>
+        <div class="opt-card">D) The number of seconds in one week</div>
+        <div class="opt-card">E) The number of minutes in 24 weeks</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 18</div>
+      <div class="answer-box">Correct Answer: D) The number of seconds in one week</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>60 sec &times; 60 min &times; 24 hr &times; 7 days = total seconds in 1 week[cite: 5].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q19 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 19</div>
+      <p class="question-text">Two years ago the cats Tim and Tom were together 15 years old. Now Tom is 13 years old. In how many years will Tim be 9 years old?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 1</div>
+        <div class="opt-card">B) 2</div>
+        <div class="opt-card">C) 3</div>
+        <div class="opt-card">D) 4</div>
+        <div class="opt-card">E) 5</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 19</div>
+      <div class="answer-box">Correct Answer: C) 3</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Combined age now = 15 + 4 = 19. Tim = 19 - 13 = 6 today. Tim reaches 9 in 3 years[cite: 5].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q20 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 20</div>
+      <p class="question-text">Kamilla wrote down all of the numbers from 1-100 one after the other in a table with 5 columns. Which of the following could this piece have been?</p>
+      <div class="diagram-container">
+        <img src="201.png" alt="Question 20 Table Fragment" class="q-img" />
+        <img src="202.png" alt="Question 20 Options A-E" class="q-img" />
+      </div>
+      <div class="options-grid">
+        <div class="opt-card">A) Piece A</div>
+        <div class="opt-card">B) Piece B</div>
+        <div class="opt-card">C) Piece C</div>
+        <div class="opt-card">D) Piece D</div>
+        <div class="opt-card">E) Piece E</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 20</div>
+      <div class="answer-box">Correct Answer: D</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Checking table column offsets for 5 columns identifies option D as valid[cite: 5].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q21 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 21</div>
+      <p class="question-text">The teacher said, "in our school library there are roughly 2010 books." Pupils guessed: Artur 2010, Beate 1998, Carlos 2015. Errors are 12, 7, 5 (not in order). How many books are in the library?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 2003</div>
+        <div class="opt-card">B) 2005</div>
+        <div class="opt-card">C) 2008</div>
+        <div class="opt-card">D) 2020</div>
+        <div class="opt-card">E) 2022</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 21</div>
+      <div class="answer-box">Correct Answer: B) 2005</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>With 2005 books, errors are 5 (Artur), 7 (Beate), and 10 (~12 max discrepancy)[cite: 5].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q22 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 22</div>
+      <p class="question-text">Lines are drawn on paper and some are numbered 1 to 8. Paper is cut along some lines and folded as shown. What is the total of the numbers on the lines that were cut?</p>
+      <div class="diagram-container"><img src="22.png" alt="Question 22 Paper Folding Lines" class="q-img" /></div>
+      <div class="options-grid">
+        <div class="opt-card">A) 16</div>
+        <div class="opt-card">B) 17</div>
+        <div class="opt-card">C) 18</div>
+        <div class="opt-card">D) 20</div>
+        <div class="opt-card">E) 21</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 22</div>
+      <div class="answer-box">Correct Answer: C) 18</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Cuts are made along lines 3, 7, and 8. Sum = 3 + 7 + 8 = 18[cite: 5].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q23 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 23</div>
+      <p class="question-text">Andrew, Stefan, Robert and Marko meet in Zagreb from Paris, Dubrovnik, Rome, Berlin. Andrew & Berlin friend arrive first (neither from Paris/Rome). Robert arrives with Paris friend. Marko & Paris friend enjoyed concert. Where is Marko from?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) Paris</div>
+        <div class="opt-card">B) Rom</div>
+        <div class="opt-card">C) Dubrovnik</div>
+        <div class="opt-card">D) Berlin</div>
+        <div class="opt-card">E) Zagreb</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 23</div>
+      <div class="answer-box">Correct Answer: D) Berlin</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Deduction path: Andrew is from Dubrovnik, Robert is from Rome, leaving Marko from Berlin[cite: 5].</p>
+      </div>
+    </section>
+
+    <!-- 2010 Q24 -->
+    <section class="slide">
+      <div class="q-badge">2010 - Question 24</div>
+      <p class="question-text">Berti's friends add day + month of birthdays and each get 35, but no two have same birthday. What is the maximum number of friends Berti has?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 7</div>
+        <div class="opt-card">B) 8</div>
+        <div class="opt-card">C) 9</div>
+        <div class="opt-card">D) 10</div>
+        <div class="opt-card">E) 12</div>
+      </div>
+    </section>
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer: 2010 - Question 24</div>
+      <div class="answer-box">Correct Answer: C) 9</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Valid months range from April (month 4, day 31) to December (month 12, day 23), totaling 9 unique valid birthdays[cite: 5].</p>
       </div>
     </section>
 
     <!-- COMPLETION -->
     <section class="slide title-slide">
       <h1>Congratulations!</h1>
-      <h2>You completed the Kangaroo Math 2009 Écolier Deck.</h2>
+      <h2>You completed all 47 questions from Kangaroo Écolier (2009 & 2010).</h2>
       <div style="margin-top: 40px;">
         <button class="nav-btn-lg" onclick="goToSlide(0)">&circlearrowleft; Restart Deck</button>
       </div>
@@ -802,7 +1265,7 @@
   <!-- CONTROL BAR -->
   <div id="controls">
     <button class="ctrl-btn" onclick="prevSlide()">&larr; Previous</button>
-    <span class="slide-counter" id="counter">1 / 48</span>
+    <span class="slide-counter" id="counter">1 / 98</span>
     <button class="ctrl-btn" onclick="nextSlide()">Next &rarr;</button>
   </div>
 
