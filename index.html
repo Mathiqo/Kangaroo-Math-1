@@ -25,8 +25,8 @@
 
     #deck {
       width: 90vw;
-      max-width: 900px;
-      height: 82vh;
+      max-width: 950px;
+      height: 85vh;
       position: relative;
       background: #ffffff;
       border-radius: 16px;
@@ -37,7 +37,7 @@
 
     .slide {
       display: none;
-      padding: 40px;
+      padding: 30px;
       height: 100%;
       flex-direction: column;
       justify-content: center;
@@ -69,7 +69,7 @@
       padding: 6px 18px;
       border-radius: 20px;
       font-size: 0.95rem;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .answer-badge {
@@ -79,15 +79,15 @@
       padding: 6px 18px;
       border-radius: 20px;
       font-size: 0.95rem;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .question-text {
-      font-size: 1.3rem;
-      line-height: 1.6;
-      margin-bottom: 25px;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      margin-bottom: 18px;
       color: #1e293b;
-      max-width: 750px;
+      max-width: 800px;
     }
 
     .options-grid {
@@ -95,12 +95,12 @@
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 12px;
       width: 100%;
-      max-width: 700px;
+      max-width: 800px;
     }
 
     .opt-card {
       background: #f1f5f9;
-      padding: 14px;
+      padding: 12px;
       border-radius: 10px;
       font-size: 1rem;
       color: #334155;
@@ -116,45 +116,53 @@
       font-weight: 700;
       padding: 14px 24px;
       border-radius: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .explanation-box {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      padding: 20px;
+      padding: 18px;
       border-radius: 12px;
       text-align: left;
-      max-width: 650px;
+      max-width: 700px;
       width: 100%;
       line-height: 1.6;
-      font-size: 1rem;
+      font-size: 0.98rem;
       color: #334155;
     }
 
     .explanation-box h3 {
       color: #0284c7;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .diagram-container {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 15px;
+      width: 100%;
     }
 
+    /* Increased size for question images */
     .q-img {
-      max-width: 280px;
-      max-height: 200px;
+      max-width: 480px;
+      max-height: 280px;
+      width: auto;
+      height: auto;
       object-fit: contain;
-      border-radius: 8px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 6px;
+      background: #ffffff;
     }
 
     /* Controls */
     #controls {
-      margin-top: 18px;
+      margin-top: 15px;
       display: flex;
       align-items: center;
       gap: 20px;
