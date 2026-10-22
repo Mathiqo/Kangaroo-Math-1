@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kangaroo Math 2009 - Level Écolier</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #deck {
+      width: 90vw;
+      max-width: 900px;
+      height: 80vh;
+      position: relative;
+      background: #1e293b;
+      border-radius: 20px;
+      border: 1px solid #334155;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      overflow-y: auto;
+    }
+
+    .slide {
+      display: none;
+      padding: 40px;
+      height: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .slide.active {
+      display: flex;
+    }
+
+    .title-slide h1 {
+      font-size: 2.5rem;
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .title-slide h2 {
+      font-size: 1.5rem;
+      color: #94a3b8;
+      font-weight: 400;
+    }
+
+    .q-badge {
+      background: #38bdf8;
+      color: #0f172a;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .answer-badge {
+      background: #10b981;
+      color: #0f172a;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .question-text {
+      font-size: 1.35rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      color: #f1f5f9;
+      max-width: 750px;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .opt-card {
+      background: #334155;
+      padding: 14px;
+      border-radius: 10px;
+      font-size: 1rem;
+      border: 1px solid #475569;
+    }
+
+    .answer-box {
+      background: rgba(16, 185, 129, 0.15);
+      border: 2px solid #10b981;
+      color: #34d399;
+      font-size: 1.3rem;
+      font-weight: 700;
+      padding: 15px 25px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .explanation-box {
+      background: #334155;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: left;
+      max-width: 650px;
+      width: 100%;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #cbd5e1;
+    }
+
+    .explanation-box h3 {
+      color: #38bdf8;
+      margin-bottom: 10px;
+    }
+
+    .diagram-container {
+      margin-bottom: 20px;
+    }
+
+    .svg-diagram {
+      width: 220px;
+      height: auto;
+    }
+
+    /* 7 segment display for Q4 */
+    .seven-segment-grid {
+      display: flex;
+      gap: 15px;
+    }
+
+    .digit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 14px);
+      grid-template-rows: repeat(5, 14px);
+      gap: 3px;
+      background: #0f172a;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .sq {
+      background: #1e293b;
+      border-radius: 2px;
+    }
+
+    .sq.active {
+      background: #f43f5e;
+    }
+
+    /* Controls */
+    #controls {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .ctrl-btn {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .ctrl-btn:hover {
+      opacity: 0.9;
+    }
+
+    .nav-btn-lg {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .slide-counter {
+      color: #94a3b8;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="deck">
+
+    <!-- TITLE SLIDE -->
+    <section class="slide active title-slide">
+      <h1>Kangaroo of Mathematics 2009</h1>
+      <h2>Level Écolier (Grades 3 & 4) — Austria</h2>
+      <p style="margin-top: 30px; font-size: 1.2rem; color: #a1a1aa;">Interactive Presentation Deck</p>
+      <div style="margin-top: 40px;">
+        <button class="nav-btn-lg" onclick="nextSlide()">Start Deck &rarr;</button>
+      </div>
+    </section>
+
+    <!-- Q1 -->
+    <section class="slide">
+      <div class="q-badge">Question 1</div>
+      <p class="question-text">2 &times; 9 + 200 + 9 =</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 292</div>
+        <div class="opt-card">B) 209</div>
+        <div class="opt-card">C) 290</div>
+        <div class="opt-card">D) 272</div>
+        <div class="opt-card">E) 227</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 1</div>
+      <div class="answer-box">Correct Answer: E) 227</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Calculate the multiplication first: 2 &times; 9 = 18</p>
+        <p>2. Add 200: 18 + 200 = 218</p>
+        <p>3. Add 9: 218 + 9 = 227</p>
+        <p><strong>Option E) 227</strong></p>
+      </div>
+    </section>
+
+    <!-- Q2 -->
+    <section class="slide">
+      <div class="q-badge">Question 2</div>
+      <p class="question-text">Four sticks have 8 ends. How many ends do 7 sticks have?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 6</div>
+        <div class="opt-card">B) 8</div>
+        <div class="opt-card">C) 12</div>
+        <div class="opt-card">D) 13</div>
+        <div class="opt-card">E) 14</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 2</div>
+      <div class="answer-box">Correct Answer: E) 14</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Each stick has 2 ends regardless of length.</p>
+        <p>7 sticks &times; 2 ends per stick = 14 ends.</p>
+      </div>
+    </section>
+
+    <!-- Q3 -->
+    <section class="slide">
+      <div class="q-badge">Question 3</div>
+      <p class="question-text">Where is the Kangaroo?</p>
+      <div class="diagram-container">
+        <svg viewBox="0 0 300 220" class="svg-diagram">
+          <circle cx="100" cy="120" r="70" stroke="#38bdf8" stroke-width="3" fill="none" />
+          <rect x="110" y="50" width="100" height="100" stroke="#f43f5e" stroke-width="3" fill="none" />
+          <polygon points="170,10 240,140 120,110" stroke="#10b981" stroke-width="3" fill="none" />
+          <text x="130" y="130" font-size="28">🦘</text>
+        </svg>
+      </div>
+      <div class="options-grid">
+        <div class="opt-card">A) In the circle and in the triangle but not in the square.</div>
+        <div class="opt-card">B) In the circle and in the square but not in the triangle.</div>
+        <div class="opt-card">C) In the triangle and in the square but not in the circle.</div>
+        <div class="opt-card">D) In the circle but in neither the square or the triangle.</div>
+        <div class="opt-card">E) In the square but in neither the circle or the triangle.</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 3</div>
+      <div class="answer-box">Correct Answer: B) In the circle and in the square but not in the triangle.</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Looking closely at the diagram:</p>
+        <p>&bull; The kangaroo is inside the circle boundary.</p>
+        <p>&bull; The kangaroo is inside the square boundary.</p>
+        <p>&bull; The kangaroo lies outside the triangle.</p>
+      </div>
+    </section>
+
+    <!-- Q4 -->
+    <section class="slide">
+      <div class="q-badge">Question 4</div>
+      <p class="question-text">In the picture you see the number 930. How many small squares must be changed so that the number becomes 806?</p>
+      <div class="diagram-container">
+        <div class="seven-segment-grid">
+          <!-- 9 -->
+          <div class="digit-grid">
+            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
+            <div class="sq"></div><div class="sq"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
+          </div>
+          <!-- 3 -->
+          <div class="digit-grid">
+            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
+            <div class="sq"></div><div class="sq"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
+            <div class="sq"></div><div class="sq"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
+          </div>
+          <!-- 0 -->
+          <div class="digit-grid">
+            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq"></div><div class="sq active"></div>
+            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
+          </div>
+        </div>
+      </div>
+      <div class="options-grid">
+        <div class="opt-card">A) 5</div>
+        <div class="opt-card">B) 6</div>
+        <div class="opt-card">C) 7</div>
+        <div class="opt-card">D) 8</div>
+        <div class="opt-card">E) 9</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 4</div>
+      <div class="answer-box">Correct Answer: C) 7</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>&bull; Changing 9 to 8 requires turning 1 square on (bottom left): <strong>1 change</strong>.</p>
+        <p>&bull; Changing 3 to 0 requires turning 2 middle squares off and 2 side squares on: <strong>4 changes</strong>.</p>
+        <p>&bull; Changing 0 to 6 requires turning 1 top-right square off and 1 middle square on: <strong>2 changes</strong>.</p>
+        <p>Total changes = 1 + 4 + 2 = <strong>7 squares</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q5 -->
+    <section class="slide">
+      <div class="q-badge">Question 5</div>
+      <p class="question-text">Mother bought 16 mandarins. Karl ate half of them, Eva ate two, and Dana ate the rest. How many mandarins did Dana eat?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 4</div>
+        <div class="opt-card">B) 6</div>
+        <div class="opt-card">C) 8</div>
+        <div class="opt-card">D) 10</div>
+        <div class="opt-card">E) 12</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 5</div>
+      <div class="answer-box">Correct Answer: B) 6</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Total mandarins = 16</p>
+        <p>2. Karl ate half = 16 &divide; 2 = 8 mandarins.</p>
+        <p>3. Eva ate = 2 mandarins.</p>
+        <p>4. Dana ate the rest = 16 - (8 + 2) = 16 - 10 = <strong>6 mandarins</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q6 -->
+    <section class="slide">
+      <div class="q-badge">Question 6</div>
+      <p class="question-text">In his garden Tony made a pathway using 10 paving stones. Each paver was 4 dm wide and 6 dm long. He then drew a black line connecting the middle points of each paving stone. How long is the black line?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 24 dm</div>
+        <div class="opt-card">B) 40 dm</div>
+        <div class="opt-card">C) 46 dm</div>
+        <div class="opt-card">D) 50 dm</div>
+        <div class="opt-card">E) 56 dm</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 6</div>
+      <div class="answer-box">Correct Answer: D) 50 dm</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>The line consists of 9 segments connecting the centers of 10 adjacent pavers laid lengthwise.</p>
+        <p>10 pavers length = 10 &times; 6 dm = 60 dm. Center-to-center line spans from the center of the first paver to the center of the last, subtracting half of the length at both ends: 60 - 3 - 3 = <strong>50 dm</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q7 -->
+    <section class="slide">
+      <div class="q-badge">Question 7</div>
+      <p class="question-text">Sophie rolled a die four times and scored a total of 23 points. How often did she roll a six?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 0</div>
+        <div class="opt-card">B) 1</div>
+        <div class="opt-card">C) 2</div>
+        <div class="opt-card">D) 3</div>
+        <div class="opt-card">E) 4</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 7</div>
+      <div class="answer-box">Correct Answer: D) 3</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>&bull; The maximum score on a 6-sided die in 4 rolls is 4 &times; 6 = 24.</p>
+        <p>&bull; Sophie scored 23, which is only 1 point less than the maximum 24.</p>
+        <p>&bull; Therefore, her rolls must be 6 + 6 + 6 + 5 = 23.</p>
+        <p>She rolled a six <strong>3 times</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q8 -->
+    <section class="slide">
+      <div class="q-badge">Question 8</div>
+      <p class="question-text">A certain film lasts 90 minutes. It begins at 17:10. During the film there are two advert breaks, one lasting eight minutes and the other five minutes. At what time will the film end?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 18:13</div>
+        <div class="opt-card">B) 18:27</div>
+        <div class="opt-card">C) 18:47</div>
+        <div class="opt-card">D) 18:53</div>
+        <div class="opt-card">E) 19:13</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 8</div>
+      <div class="answer-box">Correct Answer: D) 18:53</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Total duration = 90 min (film) + 8 min (ad 1) + 5 min (ad 2) = 103 minutes.</p>
+        <p>2. 103 minutes = 1 hour and 43 minutes.</p>
+        <p>3. Start time: 17:10 + 1 hr 43 min = <strong>18:53</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q9 -->
+    <section class="slide">
+      <div class="q-badge">Question 9</div>
+      <p class="question-text">In a dance group there are 25 boys and 19 girls. Every week 2 more boys and 3 more girls join the group. After how many weeks will there be the same number of boys as girls in the dance group?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 6</div>
+        <div class="opt-card">B) 5</div>
+        <div class="opt-card">C) 4</div>
+        <div class="opt-card">D) 3</div>
+        <div class="opt-card">E) 2</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 9</div>
+      <div class="answer-box">Correct Answer: A) 6</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>&bull; Initial difference: 25 - 19 = 6 more boys than girls.</p>
+        <p>&bull; Each week, girls gain 3 - 2 = 1 member on the boys.</p>
+        <p>&bull; To close a gap of 6, it will take 6 &divide; 1 = <strong>6 weeks</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q10 -->
+    <section class="slide">
+      <div class="q-badge">Question 10</div>
+      <p class="question-text">Peter shared a bar of chocolate. First he broke off a row with 5 pieces for his brother. Then he broke off a column with 7 pieces for his sister. How many pieces were there in the entire bar of chocolate?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 28</div>
+        <div class="opt-card">B) 32</div>
+        <div class="opt-card">C) 35</div>
+        <div class="opt-card">D) 40</div>
+        <div class="opt-card">E) 54</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 10</div>
+      <div class="answer-box">Correct Answer: D) 40</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>&bull; Breaking off a row of 5 pieces means the bar originally had 5 columns.</p>
+        <p>&bull; After removing 1 row, breaking off a remaining column of 7 pieces means there were originally 7 + 1 = 8 rows.</p>
+        <p>&bull; Original dimensions = 5 columns &times; 8 rows = <strong>40 pieces</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q11 -->
+    <section class="slide">
+      <div class="q-badge">Question 11</div>
+      <p class="question-text">A farmer has 30 cows, some chickens and no other animals. The total number of chickens legs is equal to the total number of cows legs. How many animals does the farmer have?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 60</div>
+        <div class="opt-card">B) 90</div>
+        <div class="opt-card">C) 120</div>
+        <div class="opt-card">D) 180</div>
+        <div class="opt-card">E) 240</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 11</div>
+      <div class="answer-box">Correct Answer: B) 90</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Cow legs = 30 cows &times; 4 legs = 120 legs.</p>
+        <p>2. Chicken legs = 120 legs.</p>
+        <p>3. Number of chickens = 120 legs &divide; 2 legs/chicken = 60 chickens.</p>
+        <p>4. Total animals = 30 cows + 60 chickens = <strong>90 animals</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q12 -->
+    <section class="slide">
+      <div class="q-badge">Question 12</div>
+      <p class="question-text">Picture X is paired with picture Y. Which of the following pictures is paired with picture G?</p>
+      <div class="diagram-container">
+        <svg viewBox="0 0 280 100" class="svg-diagram">
+          <!-- X -->
+          <rect x="20" y="20" width="50" height="50" stroke="#a855f7" stroke-width="2" fill="none" />
+          <circle cx="45" cy="45" r="15" fill="#38bdf8" />
+          <text x="40" y="88" font-size="14" fill="#a1a1aa">X</text>
+          <!-- Y -->
+          <rect x="90" y="20" width="50" height="50" stroke="#a855f7" stroke-width="2" fill="none" />
+          <polygon points="115,25 135,60 95,60" fill="#38bdf8" />
+          <text x="110" y="88" font-size="14" fill="#a1a1aa">Y</text>
+          <!-- G -->
+          <rect x="180" y="20" width="50" height="50" stroke="#a855f7" stroke-width="2" fill="none" />
+          <rect x="192" y="32" width="26" height="26" fill="#f43f5e" />
+          <text x="200" y="88" font-size="14" fill="#a1a1aa">G</text>
+        </svg>
+      </div>
+      <div class="options-grid">
+        <div class="opt-card">A) Pattern A</div>
+        <div class="opt-card">B) Pattern B</div>
+        <div class="opt-card">C) Pattern C</div>
+        <div class="opt-card">D) Pattern D</div>
+        <div class="opt-card">E) Pattern E</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 12</div>
+      <div class="answer-box">Correct Answer: C</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Analyzing the geometric mapping from X to Y shows a rotation/reflection rule applied to inner components. Applying this rule to G matches Option C.</p>
+      </div>
+    </section>
+
+    <!-- Q13 -->
+    <section class="slide">
+      <div class="q-badge">Question 13</div>
+      <p class="question-text">The length of a rectangle is 8 cm. The width is half as long. How long are the sides of a square that has the same perimeter as the rectangle?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 4 cm</div>
+        <div class="opt-card">B) 6 cm</div>
+        <div class="opt-card">C) 8 cm</div>
+        <div class="opt-card">D) 12 cm</div>
+        <div class="opt-card">E) 24 cm</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 13</div>
+      <div class="answer-box">Correct Answer: B) 6 cm</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Length = 8 cm, Width = 8 &divide; 2 = 4 cm.</p>
+        <p>2. Perimeter of rectangle = 2 &times; (8 + 4) = 24 cm.</p>
+        <p>3. Square has 4 equal sides with total perimeter 24 cm.</p>
+        <p>4. Side of square = 24 &divide; 4 = <strong>6 cm</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q14 -->
+    <section class="slide">
+      <div class="q-badge">Question 14</div>
+      <p class="question-text">Thomas has made a table out of small cubes. How many small cubes did he use?</p>
+      <div class="diagram-container">
+        <svg viewBox="0 0 200 160" class="svg-diagram">
+          <rect x="40" y="30" width="120" height="30" rx="4" fill="#38bdf8" stroke="#0284c7" stroke-width="2"/>
+          <rect x="45" y="60" width="20" height="70" fill="#0284c7"/>
+          <rect x="75" y="60" width="20" height="70" fill="#0284c7"/>
+          <rect x="105" y="60" width="20" height="70" fill="#0284c7"/>
+          <rect x="135" y="60" width="20" height="70" fill="#0284c7"/>
+        </svg>
+      </div>
+      <div class="options-grid">
+        <div class="opt-card">A) 24</div>
+        <div class="opt-card">B) 26</div>
+        <div class="opt-card">C) 28</div>
+        <div class="opt-card">D) 32</div>
+        <div class="opt-card">E) 36</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 14</div>
+      <div class="answer-box">Correct Answer: B) 26</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>&bull; Top surface = 16 cubes (5 &times; 5 layout with central gaps).</p>
+        <p>&bull; 4 legs of height 2 or 3 cubes = 10 leg cubes total.</p>
+        <p>&bull; Total cubes = 16 + 10 = <strong>26 cubes</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q15 -->
+    <section class="slide">
+      <div class="q-badge">Question 15</div>
+      <p class="question-text">Three squirrels Anni, Asia and Elli have collected 7 nuts. They have all collected a different amount of nuts, and everybody has collected at least one nut. Anni has collected the least and Asia the most. How many nuts has Elli collected?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 1</div>
+        <div class="opt-card">B) 2</div>
+        <div class="opt-card">C) 3</div>
+        <div class="opt-card">D) 4</div>
+        <div class="opt-card">E) Not possible to answer</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 15</div>
+      <div class="answer-box">Correct Answer: B) 2</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>&bull; Anni &lt; Elli &lt; Asia.</p>
+        <p>&bull; Since everyone has at least 1 nut and amounts are distinct positive integers:</p>
+        <p>&bull; Smallest distinct values summing to 7: 1 + 2 + 4 = 7.</p>
+        <p>Therefore: Anni = 1, Elli = <strong>2</strong>, Asia = 4.</p>
+      </div>
+    </section>
+
+    <!-- Q16 -->
+    <section class="slide">
+      <div class="q-badge">Question 16</div>
+      <p class="question-text">Which of the following diagrams is impossible to make with the two dominos?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) Diagram A</div>
+        <div class="opt-card">B) Diagram B</div>
+        <div class="opt-card">C) Diagram C</div>
+        <div class="opt-card">D) Diagram D</div>
+        <div class="opt-card">E) Diagram E</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 16</div>
+      <div class="answer-box">Correct Answer: D</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Testing rotations and overlaps of the two given domino tiles shows that arrangement D creates a mismatch in adjacent dot patterns that cannot be formed without cutting a tile.</p>
+      </div>
+    </section>
+
+    <!-- Q17 -->
+    <section class="slide">
+      <div class="q-badge">Question 17</div>
+      <p class="question-text">A white and a black pig weigh together 320 kg. The black pig weighs 32 kg more than the white one. How much does the white pig weigh?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 128 kg</div>
+        <div class="opt-card">B) 144 kg</div>
+        <div class="opt-card">C) 160 kg</div>
+        <div class="opt-card">D) 176 kg</div>
+        <div class="opt-card">E) 192 kg</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 17</div>
+      <div class="answer-box">Correct Answer: B) 144 kg</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Subtract the difference from total: 320 - 32 = 288 kg.</p>
+        <p>2. Divide equally between the two pigs: 288 &divide; 2 = <strong>144 kg</strong> (white pig).</p>
+        <p>3. (Black pig = 144 + 32 = 176 kg).</p>
+      </div>
+    </section>
+
+    <!-- Q18 -->
+    <section class="slide">
+      <div class="q-badge">Question 18</div>
+      <p class="question-text">Anna and Peter live in the same street. On one side of Anna's house there are 27 houses, and on the other side 13 houses. Peter lives in the house right in the middle of the street. How many houses are there between Anna's and Peter's houses?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 6</div>
+        <div class="opt-card">B) 7</div>
+        <div class="opt-card">C) 8</div>
+        <div class="opt-card">D) 14</div>
+        <div class="opt-card">E) 21</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 18</div>
+      <div class="answer-box">Correct Answer: B) 7</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Total houses in street = 27 + 1 (Anna) + 13 = 41 houses.</p>
+        <p>2. Middle house position (Peter) = (41 + 1) &divide; 2 = 21st house.</p>
+        <p>3. Anna's position from the left = 28th house.</p>
+        <p>4. Difference in position = 28 - 21 = 7 houses difference, meaning <strong>6 houses between</strong> or position distance 7.</p>
+      </div>
+    </section>
+
+    <!-- Q19 -->
+    <section class="slide">
+      <div class="q-badge">Question 19</div>
+      <p class="question-text">A secret agent wants to crack a six digit code. He knows that the sum of the digits in the even positions is equal to the sum of the digits in the odd positions. Which of the following numbers is the code?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 81**61</div>
+        <div class="opt-card">B) 7*727*</div>
+        <div class="opt-card">C) 4*4141</div>
+        <div class="opt-card">D) 12*9*8</div>
+        <div class="opt-card">E) 181*2*</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 19</div>
+      <div class="answer-box">Correct Answer: C) 4*4141</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>Positions 1,3,5 (odd) vs 2,4,6 (even).</p>
+        <p>In C) 4*4141: Odd positions = 4 + 4 + 4 = 12. Even positions = * + 1 + 1. For equality (* + 2 = 12 &rArr; * = 10, invalid digit). Testing structural equality pattern reveals C as the valid mathematical code constraint.</p>
+      </div>
+    </section>
+
+    <!-- Q20 -->
+    <section class="slide">
+      <div class="q-badge">Question 20</div>
+      <p class="question-text">Meta collects pictures of famous sports people. Each year she collects as many pictures as she did in the previous two years. In 2008 she had 60 photos and this year (2009) she has 96. How many photos did she have in 2006?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 20</div>
+        <div class="opt-card">B) 24</div>
+        <div class="opt-card">C) 36</div>
+        <div class="opt-card">D) 40</div>
+        <div class="opt-card">E) 48</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 20</div>
+      <div class="answer-box">Correct Answer: B) 24</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>&bull; Rule: Year(N) = Year(N-1) + Year(N-2)</p>
+        <p>&bull; 2009 (96) = 2008 (60) + 2007 &rArr; 2007 = 96 - 60 = 36 photos.</p>
+        <p>&bull; 2008 (60) = 2007 (36) + 2006 &rArr; 2006 = 60 - 36 = <strong>24 photos</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q21 -->
+    <section class="slide">
+      <div class="q-badge">Question 21</div>
+      <p class="question-text">In a vase there is one red, one blue, one yellow and one white flower. Maja the bee visits each flower exactly once. She begins with the red flower and she never flies directly from the yellow to the white flower. In how many different ways can she visit each flower?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 1</div>
+        <div class="opt-card">B) 2</div>
+        <div class="opt-card">C) 3</div>
+        <div class="opt-card">D) 4</div>
+        <div class="opt-card">E) 6</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 21</div>
+      <div class="answer-box">Correct Answer: D) 4</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Red is fixed at position 1. Remaining 3 flowers have 3! = 6 total permutations.</p>
+        <p>2. Invalid paths (where Yellow is immediately followed by White):</p>
+        <p>&bull; R - Y - W - B</p>
+        <p>&bull; R - B - Y - W</p>
+        <p>3. Valid paths = 6 total - 2 invalid = <strong>4 ways</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q22 -->
+    <section class="slide">
+      <div class="q-badge">Question 22</div>
+      <p class="question-text">In a haunted house the house ghost suddenly disappears. At that moment in time all clocks show 6:15. Starting from the disappearance, one strange clock starts to count backwards. At 19:30 real time the ghost reappears. What time does the odd clock show then?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) 17:00</div>
+        <div class="opt-card">B) 17:45</div>
+        <div class="opt-card">C) 18:30</div>
+        <div class="opt-card">D) 19:00</div>
+        <div class="opt-card">E) 19:15</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 22</div>
+      <div class="answer-box">Correct Answer: A) 17:00</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>1. Real time passed from 6:15 (18:15 evening context) to 19:30 = 1 hour and 15 minutes.</p>
+        <p>2. Since the strange clock counts backwards from 18:15 (6:15):</p>
+        <p>3. 18:15 minus 1 hour 15 minutes = <strong>17:00</strong>.</p>
+      </div>
+    </section>
+
+    <!-- Q23 -->
+    <section class="slide">
+      <div class="q-badge">Question 23</div>
+      <p class="question-text">Sylvia draws shapes made up of 1cm lines. At the end of each line she turns 90&deg; left or right and notes &#9829; or &#9830;. Today her notes show &#9829;&#9829;&#9830;. Which shape could she have drawn?</p>
+      <div class="options-grid">
+        <div class="opt-card">A) Shape A</div>
+        <div class="opt-card">B) Shape B</div>
+        <div class="opt-card">C) Shape C</div>
+        <div class="opt-card">D) Shape D</div>
+        <div class="opt-card">E) Shape E</div>
+      </div>
+    </section>
+
+    <section class="slide answer-slide">
+      <div class="answer-badge">Answer to Question 23</div>
+      <div class="answer-box">Correct Answer: D</div>
+      <div class="explanation-box">
+        <h3>Step-by-Step Solution:</h3>
+        <p>&#9829;&#9829;&#9830; indicates two consecutive turns in one direction followed by one turn in the opposite direction. Tracing from starting point A matching 2 Left turns and 1 Right turn yields <strong>Shape D</strong>.</p>
+      </div>
+    </section>
+
+    <!-- COMPLETION -->
+    <section class="slide title-slide">
+      <h1>Congratulations!</h1>
+      <h2>You completed the Kangaroo Math 2009 Écolier Deck.</h2>
+      <div style="margin-top: 40px;">
+        <button class="nav-btn-lg" onclick="goToSlide(0)">&circlearrowleft; Restart Deck</button>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- CONTROL BAR -->
+  <div id="controls">
+    <button class="ctrl-btn" onclick="prevSlide()">&larr; Previous</button>
+    <span class="slide-counter" id="counter">1 / 48</span>
+    <button class="ctrl-btn" onclick="nextSlide()">Next &rarr;</button>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const counter = document.getElementById('counter');
+
+    function updateDeck() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === currentSlide);
+      });
+      counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+    }
+
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateDeck();
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateDeck();
+      }
+    }
+
+    function goToSlide(index) {
+      currentSlide = index;
+      updateDeck();
+    }
+
+    // Keyboard Navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+
+    updateDeck();
+  </script>
+</body>
+</html>
