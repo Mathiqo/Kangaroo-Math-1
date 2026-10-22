@@ -135,36 +135,22 @@
 
     .diagram-container {
       margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .q-img {
+      max-width: 250px;
+      max-height: 180px;
+      object-fit: contain;
+      border-radius: 8px;
     }
 
     .svg-diagram {
       width: 220px;
       height: auto;
-    }
-
-    /* 7 segment display for Q4 */
-    .seven-segment-grid {
-      display: flex;
-      gap: 15px;
-    }
-
-    .digit-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 14px);
-      grid-template-rows: repeat(5, 14px);
-      gap: 3px;
-      background: #0f172a;
-      padding: 8px;
-      border-radius: 6px;
-    }
-
-    .sq {
-      background: #1e293b;
-      border-radius: 2px;
-    }
-
-    .sq.active {
-      background: #f43f5e;
     }
 
     /* Controls */
@@ -278,7 +264,7 @@
           <circle cx="100" cy="120" r="70" stroke="#38bdf8" stroke-width="3" fill="none" />
           <rect x="110" y="50" width="100" height="100" stroke="#f43f5e" stroke-width="3" fill="none" />
           <polygon points="170,10 240,140 120,110" stroke="#10b981" stroke-width="3" fill="none" />
-          <text x="130" y="130" font-size="28">🦘</text>
+          <image href="kangaroo.png" x="120" y="105" width="35" height="35" />
         </svg>
       </div>
       <div class="options-grid">
@@ -307,32 +293,7 @@
       <div class="q-badge">Question 4</div>
       <p class="question-text">In the picture you see the number 930. How many small squares must be changed so that the number becomes 806?</p>
       <div class="diagram-container">
-        <div class="seven-segment-grid">
-          <!-- 9 -->
-          <div class="digit-grid">
-            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
-            <div class="sq"></div><div class="sq"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
-          </div>
-          <!-- 3 -->
-          <div class="digit-grid">
-            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
-            <div class="sq"></div><div class="sq"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
-            <div class="sq"></div><div class="sq"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
-          </div>
-          <!-- 0 -->
-          <div class="digit-grid">
-            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq"></div><div class="sq active"></div>
-            <div class="sq active"></div><div class="sq active"></div><div class="sq active"></div>
-          </div>
-        </div>
+        <img src="Digits.png" alt="Digits Image" class="q-img" />
       </div>
       <div class="options-grid">
         <div class="opt-card">A) 5</div>
@@ -384,6 +345,9 @@
     <section class="slide">
       <div class="q-badge">Question 6</div>
       <p class="question-text">In his garden Tony made a pathway using 10 paving stones. Each paver was 4 dm wide and 6 dm long. He then drew a black line connecting the middle points of each paving stone. How long is the black line?</p>
+      <div class="diagram-container">
+        <img src="zigzag.png" alt="Zigzag Pathway Image" class="q-img" />
+      </div>
       <div class="options-grid">
         <div class="opt-card">A) 24 dm</div>
         <div class="opt-card">B) 40 dm</div>
@@ -480,6 +444,9 @@
     <section class="slide">
       <div class="q-badge">Question 10</div>
       <p class="question-text">Peter shared a bar of chocolate. First he broke off a row with 5 pieces for his brother. Then he broke off a column with 7 pieces for his sister. How many pieces were there in the entire bar of chocolate?</p>
+      <div class="diagram-container">
+        <img src="Bruder.png" alt="Chocolate Bar Diagram" class="q-img" />
+      </div>
       <div class="options-grid">
         <div class="opt-card">A) 28</div>
         <div class="opt-card">B) 32</div>
@@ -530,20 +497,7 @@
       <div class="q-badge">Question 12</div>
       <p class="question-text">Picture X is paired with picture Y. Which of the following pictures is paired with picture G?</p>
       <div class="diagram-container">
-        <svg viewBox="0 0 280 100" class="svg-diagram">
-          <!-- X -->
-          <rect x="20" y="20" width="50" height="50" stroke="#a855f7" stroke-width="2" fill="none" />
-          <circle cx="45" cy="45" r="15" fill="#38bdf8" />
-          <text x="40" y="88" font-size="14" fill="#a1a1aa">X</text>
-          <!-- Y -->
-          <rect x="90" y="20" width="50" height="50" stroke="#a855f7" stroke-width="2" fill="none" />
-          <polygon points="115,25 135,60 95,60" fill="#38bdf8" />
-          <text x="110" y="88" font-size="14" fill="#a1a1aa">Y</text>
-          <!-- G -->
-          <rect x="180" y="20" width="50" height="50" stroke="#a855f7" stroke-width="2" fill="none" />
-          <rect x="192" y="32" width="26" height="26" fill="#f43f5e" />
-          <text x="200" y="88" font-size="14" fill="#a1a1aa">G</text>
-        </svg>
+        <img src="squares.png" alt="Paired Shapes Image" class="q-img" />
       </div>
       <div class="options-grid">
         <div class="opt-card">A) Pattern A</div>
@@ -593,13 +547,7 @@
       <div class="q-badge">Question 14</div>
       <p class="question-text">Thomas has made a table out of small cubes. How many small cubes did he use?</p>
       <div class="diagram-container">
-        <svg viewBox="0 0 200 160" class="svg-diagram">
-          <rect x="40" y="30" width="120" height="30" rx="4" fill="#38bdf8" stroke="#0284c7" stroke-width="2"/>
-          <rect x="45" y="60" width="20" height="70" fill="#0284c7"/>
-          <rect x="75" y="60" width="20" height="70" fill="#0284c7"/>
-          <rect x="105" y="60" width="20" height="70" fill="#0284c7"/>
-          <rect x="135" y="60" width="20" height="70" fill="#0284c7"/>
-        </svg>
+        <img src="bricks.png" alt="Cube Table Image" class="q-img" />
       </div>
       <div class="options-grid">
         <div class="opt-card">A) 24</div>
@@ -650,6 +598,10 @@
     <section class="slide">
       <div class="q-badge">Question 16</div>
       <p class="question-text">Which of the following diagrams is impossible to make with the two dominos?</p>
+      <div class="diagram-container">
+        <img src="Dot1.png" alt="Domino Pattern 1" class="q-img" />
+        <img src="Dot2.png" alt="Domino Pattern 2" class="q-img" />
+      </div>
       <div class="options-grid">
         <div class="opt-card">A) Diagram A</div>
         <div class="opt-card">B) Diagram B</div>
@@ -696,6 +648,9 @@
     <section class="slide">
       <div class="q-badge">Question 18</div>
       <p class="question-text">Anna and Peter live in the same street. On one side of Anna's house there are 27 houses, and on the other side 13 houses. Peter lives in the house right in the middle of the street. How many houses are there between Anna's and Peter's houses?</p>
+      <div class="diagram-container">
+        <img src="Anna.png" alt="Street Houses Diagram" class="q-img" />
+      </div>
       <div class="options-grid">
         <div class="opt-card">A) 6</div>
         <div class="opt-card">B) 7</div>
@@ -818,6 +773,9 @@
     <section class="slide">
       <div class="q-badge">Question 23</div>
       <p class="question-text">Sylvia draws shapes made up of 1cm lines. At the end of each line she turns 90&deg; left or right and notes &#9829; or &#9830;. Today her notes show &#9829;&#9829;&#9830;. Which shape could she have drawn?</p>
+      <div class="diagram-container">
+        <img src="23.png" alt="Shapes Grid Diagram" class="q-img" />
+      </div>
       <div class="options-grid">
         <div class="opt-card">A) Shape A</div>
         <div class="opt-card">B) Shape B</div>
