@@ -62,6 +62,14 @@
       font-weight: 400;
     }
 
+    .jump-btn-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .q-badge {
       background: #0284c7;
       color: #ffffff;
@@ -165,7 +173,9 @@
       margin-top: 15px;
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .ctrl-btn {
@@ -183,6 +193,21 @@
       background: #0369a1;
     }
 
+    .jump-btn {
+      background: #7c3aed;
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .jump-btn:hover {
+      background: #6d28d9;
+    }
+
     .nav-btn-lg {
       background: #0284c7;
       color: #ffffff;
@@ -196,6 +221,21 @@
 
     .nav-btn-lg:hover {
       background: #0369a1;
+    }
+
+    .nav-btn-purple {
+      background: #7c3aed;
+      color: #ffffff;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .nav-btn-purple:hover {
+      background: #6d28d9;
     }
 
     .slide-counter {
@@ -212,9 +252,10 @@
     <section class="slide active title-slide">
       <h1>Kangaroo of Mathematics</h1>
       <h2>Level Écolier (Grades 3 & 4) — 2009 & 2010 Collection</h2>
-      <p style="margin-top: 25px; font-size: 1.1rem; color: #64748b;">Interactive Presentation Deck</p>
-      <div style="margin-top: 35px;">
-        <button class="nav-btn-lg" onclick="nextSlide()">Start Deck &rarr;</button>
+      <p style="margin-top: 20px; font-size: 1.1rem; color: #64748b;">Interactive Presentation Deck</p>
+      <div class="jump-btn-group">
+        <button class="nav-btn-lg" onclick="goToSlide(1)">Start 2009 QP &rarr;</button>
+        <button class="nav-btn-purple" onclick="goToSlide(48)">Jump to 2010 QP &rarr;</button>
       </div>
     </section>
 
@@ -222,8 +263,9 @@
     <section class="slide title-slide">
       <h1>Part 1: Kangaroo 2009</h1>
       <h2>Level Écolier (23 Official Questions)</h2>
-      <div style="margin-top: 35px;">
+      <div class="jump-btn-group">
         <button class="nav-btn-lg" onclick="nextSlide()">Begin 2009 Questions &rarr;</button>
+        <button class="nav-btn-purple" onclick="goToSlide(48)">Jump to 2010 QP &rarr;</button>
       </div>
     </section>
 
@@ -725,8 +767,9 @@
     <section class="slide title-slide">
       <h1>Part 2: Kangaroo 2010</h1>
       <h2>Level Écolier (24 Official Questions from PDF)</h2>
-      <div style="margin-top: 35px;">
+      <div class="jump-btn-group">
         <button class="nav-btn-lg" onclick="nextSlide()">Begin 2010 Questions &rarr;</button>
+        <button class="nav-btn-purple" onclick="goToSlide(0)">&circlearrowleft; Jump to 2009 QP</button>
       </div>
     </section>
 
@@ -751,7 +794,7 @@
       <div class="answer-box">Correct Answer: A</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Piece A provides two non-intersecting path segments connecting cat-to-milk and mouse-to-cheese[cite: 3].</p>
+        <p>Piece A provides two non-intersecting path segments connecting cat-to-milk and mouse-to-cheese.</p>
       </div>
     </section>
 
@@ -772,7 +815,7 @@
       <div class="answer-box">Correct Answer: C) 12:10 hours</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Halfway through a 40-minute lesson is 20 minutes. 11:50 + 20 minutes = 12:10 hours[cite: 3].</p>
+        <p>Halfway through a 40-minute lesson is 20 minutes. 11:50 + 20 minutes = 12:10 hours.</p>
       </div>
     </section>
 
@@ -794,7 +837,7 @@
       <div class="answer-box">Correct Answer: E</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Counting symbols in Square E gives exactly 3 quadrilaterals, 3 circles, and 4 hearts[cite: 3].</p>
+        <p>Counting symbols in Square E gives exactly 3 quadrilaterals, 3 circles, and 4 hearts.</p>
       </div>
     </section>
 
@@ -815,7 +858,7 @@
       <div class="answer-box">Correct Answer: A) € 3</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Separate cost = 4 + 9 + 5 = €18. Combo = €15. Savings = 18 - 15 = €3[cite: 3].</p>
+        <p>Separate cost = 4 + 9 + 5 = €18. Combo = €15. Savings = 18 - 15 = €3.</p>
       </div>
     </section>
 
@@ -837,7 +880,7 @@
       <div class="answer-box">Correct Answer: B) 2</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Moving 2 corner coins to close the gap transforms the triangle into a 6-coin circle[cite: 3].</p>
+        <p>Moving 2 corner coins to close the gap transforms the triangle into a 6-coin circle.</p>
       </div>
     </section>
 
@@ -858,7 +901,7 @@
       <div class="answer-box">Correct Answer: C) Mike, Franz, Jaroslav, Veit</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Mike &gt; Franz &gt; Jaroslav &gt; Veit[cite: 3].</p>
+        <p>Mike &gt; Franz &gt; Jaroslav &gt; Veit.</p>
       </div>
     </section>
 
@@ -883,7 +926,7 @@
       <div class="answer-box">Correct Answer: E</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Pattern E contains line orientations impossible to form by rotating the given tile[cite: 3].</p>
+        <p>Pattern E contains line orientations impossible to form by rotating the given tile.</p>
       </div>
     </section>
 
@@ -904,7 +947,7 @@
       <div class="answer-box">Correct Answer: C) 54</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>New shoes = 32. Total shod feet = 86. Shoes before = 86 - 32 = 54[cite: 4].</p>
+        <p>New shoes = 32. Total shod feet = 86. Shoes before = 86 - 32 = 54.</p>
       </div>
     </section>
 
@@ -925,7 +968,7 @@
       <div class="answer-box">Correct Answer: A) 2</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>2&Delta; + 6 = 5&Delta; &rArr; 3&Delta; = 6 &rArr; &Delta; = 2[cite: 4].</p>
+        <p>2&Delta; + 6 = 5&Delta; &rArr; 3&Delta; = 6 &rArr; &Delta; = 2.</p>
       </div>
     </section>
 
@@ -947,7 +990,7 @@
       <div class="answer-box">Correct Answer: B) 1</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Only 1 diagonal line aligns the kangaroos directly onto each other[cite: 4].</p>
+        <p>Only 1 diagonal line aligns the kangaroos directly onto each other.</p>
       </div>
     </section>
 
@@ -968,7 +1011,7 @@
       <div class="answer-box">Correct Answer: B) 14th</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Halfway = 6 floors. Matthias floor = 8 - 6 = 2. Klara lives on 2 + 12 = 14th floor[cite: 4].</p>
+        <p>Halfway = 6 floors. Matthias floor = 8 - 6 = 2. Klara lives on 2 + 12 = 14th floor.</p>
       </div>
     </section>
 
@@ -990,7 +1033,7 @@
       <div class="answer-box">Correct Answer: A) 4</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Only the 4 top corner cubes touch 3 green faces[cite: 4].</p>
+        <p>Only the 4 top corner cubes touch 3 green faces.</p>
       </div>
     </section>
 
@@ -1012,7 +1055,7 @@
       <div class="answer-box">Correct Answer: C) 11</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Summing flower branch totals along valid grid paths yields 9, 10, 12, or 13, but never 11[cite: 4].</p>
+        <p>Summing flower branch totals along valid grid paths yields 9, 10, 12, or 13, but never 11.</p>
       </div>
     </section>
 
@@ -1033,7 +1076,7 @@
       <div class="answer-box">Correct Answer: C) 20</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>3 car trips (30 cars) + 2 lorry trips (12 lorries) = 42 vehicles in 5 trips[cite: 4]. (Note: 20 cars correspond to alternative vehicle allocation configurations depending on trip distribution).</p>
+        <p>3 car trips (30 cars) + 2 lorry trips (12 lorries) = 42 vehicles in 5 trips. (Note: 20 cars correspond to alternative vehicle allocation configurations depending on trip distribution).</p>
       </div>
     </section>
 
@@ -1054,7 +1097,7 @@
       <div class="answer-box">Correct Answer: C) 31</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Total = 1 + 2 + 4 + 8 + 16 = 31 people[cite: 4].</p>
+        <p>Total = 1 + 2 + 4 + 8 + 16 = 31 people.</p>
       </div>
     </section>
 
@@ -1075,7 +1118,7 @@
       <div class="answer-box">Correct Answer: C) Denis</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Fewest strides taken (12) means Denis has the longest stride[cite: 4].</p>
+        <p>Fewest strides taken (12) means Denis has the longest stride.</p>
       </div>
     </section>
 
@@ -1097,7 +1140,7 @@
       <div class="answer-box">Correct Answer: A) 99</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Row 2 numbers are each 10 greater, summing to 100 more. Thus ? = 199 - 100 = 99[cite: 4, 5].</p>
+        <p>Row 2 numbers are each 10 greater, summing to 100 more. Thus ? = 199 - 100 = 99.</p>
       </div>
     </section>
 
@@ -1118,7 +1161,7 @@
       <div class="answer-box">Correct Answer: D) The number of seconds in one week</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>60 sec/min &times; 60 min/hr &times; 24 hr/day &times; 7 days/week = total seconds in 1 week[cite: 5].</p>
+        <p>60 sec/min &times; 60 min/hr &times; 24 hr/day &times; 7 days/week = total seconds in 1 week.</p>
       </div>
     </section>
 
@@ -1139,7 +1182,7 @@
       <div class="answer-box">Correct Answer: C) 3</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Combined age now = 15 + 4 = 19. Tim = 19 - 13 = 6 today. Tim reaches 9 in 3 years[cite: 5].</p>
+        <p>Combined age now = 15 + 4 = 19. Tim = 19 - 13 = 6 today. Tim reaches 9 in 3 years.</p>
       </div>
     </section>
 
@@ -1164,7 +1207,7 @@
       <div class="answer-box">Correct Answer: D</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Checking table column offsets for 5 columns identifies option D as valid[cite: 5].</p>
+        <p>Checking table column offsets for 5 columns identifies option D as valid.</p>
       </div>
     </section>
 
@@ -1185,7 +1228,7 @@
       <div class="answer-box">Correct Answer: B) 2005</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>With 2005 books, errors are 5 (Artur), 7 (Beate), and 10 (~12 max discrepancy)[cite: 5].</p>
+        <p>With 2005 books, errors are 5 (Artur), 7 (Beate), and 10 (~12 max discrepancy).</p>
       </div>
     </section>
 
@@ -1207,7 +1250,7 @@
       <div class="answer-box">Correct Answer: C) 18</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Cuts are made along lines 3, 7, and 8. Sum = 3 + 7 + 8 = 18[cite: 5].</p>
+        <p>Cuts are made along lines 3, 7, and 8. Sum = 3 + 7 + 8 = 18.</p>
       </div>
     </section>
 
@@ -1228,7 +1271,7 @@
       <div class="answer-box">Correct Answer: D) Berlin</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Deduction path: Andrew is from Dubrovnik, Robert is from Rome, leaving Marko from Berlin[cite: 5].</p>
+        <p>Deduction path: Andrew is from Dubrovnik, Robert is from Rome, leaving Marko from Berlin.</p>
       </div>
     </section>
 
@@ -1249,7 +1292,7 @@
       <div class="answer-box">Correct Answer: C) 9</div>
       <div class="explanation-box">
         <h3>Step-by-Step Solution:</h3>
-        <p>Valid months range from April (month 4, day 31) to December (month 12, day 23), totaling 9 unique valid birthdays[cite: 5].</p>
+        <p>Valid months range from April (month 4, day 31) to December (month 12, day 23), totaling 9 unique valid birthdays.</p>
       </div>
     </section>
 
@@ -1257,8 +1300,9 @@
     <section class="slide title-slide">
       <h1>Congratulations!</h1>
       <h2>You completed all 47 questions from Kangaroo Écolier (2009 & 2010).</h2>
-      <div style="margin-top: 40px;">
-        <button class="nav-btn-lg" onclick="goToSlide(0)">&circlearrowleft; Restart Deck</button>
+      <div class="jump-btn-group">
+        <button class="nav-btn-lg" onclick="goToSlide(0)">&circlearrowleft; Start from 2009</button>
+        <button class="nav-btn-purple" onclick="goToSlide(48)">Jump to 2010 QP</button>
       </div>
     </section>
 
@@ -1267,6 +1311,8 @@
   <!-- CONTROL BAR -->
   <div id="controls">
     <button class="ctrl-btn" onclick="prevSlide()">&larr; Previous</button>
+    <button class="jump-btn" onclick="goToSlide(0)">2009 QP</button>
+    <button class="jump-btn" onclick="goToSlide(48)">2010 QP</button>
     <span class="slide-counter" id="counter">1 / 98</span>
     <button class="ctrl-btn" onclick="nextSlide()">Next &rarr;</button>
   </div>
@@ -1300,6 +1346,7 @@
     function goToSlide(index) {
       currentSlide = index;
       updateDeck();
+      document.getElementById('deck').scrollTop = 0;
     }
 
     // Keyboard Navigation
