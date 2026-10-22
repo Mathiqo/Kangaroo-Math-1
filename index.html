@@ -152,11 +152,6 @@
       border-radius: 8px;
     }
 
-    .svg-diagram {
-      width: 220px;
-      height: auto;
-    }
-
     /* Controls */
     #controls {
       margin-top: 18px;
@@ -268,12 +263,7 @@
       <div class="q-badge">Question 3</div>
       <p class="question-text">Where is the Kangaroo?</p>
       <div class="diagram-container">
-        <svg viewBox="0 0 300 220" class="svg-diagram">
-          <circle cx="100" cy="120" r="70" stroke="#0284c7" stroke-width="3" fill="none" />
-          <rect x="110" y="50" width="100" height="100" stroke="#ef4444" stroke-width="3" fill="none" />
-          <polygon points="170,10 240,140 120,110" stroke="#10b981" stroke-width="3" fill="none" />
-          <image href="Kangaroo.png" x="120" y="105" width="35" height="35" />
-        </svg>
+        <img src="Kangaroo.png" alt="Kangaroo Diagram" class="q-img" />
       </div>
       <div class="options-grid">
         <div class="opt-card">A) In the circle and in the triangle but not in the square.</div>
